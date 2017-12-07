@@ -7,8 +7,8 @@ export default function botanalyticsMiddleware(bot, { apiKey }) {
 
   setInterceptors(bot, botanalytics);
 
-  return (req, res, next) => {
-    botanalytics.logIncomingMessage(req.body);
+  return ({ request }, next) => {
+    botanalytics.logIncomingMessage(request.body);
 
     next();
   };
