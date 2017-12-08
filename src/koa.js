@@ -10,6 +10,6 @@ export default function botanalyticsMiddleware(bot, { apiKey }) {
   return ({ request }, next) => {
     botanalytics.logIncomingMessage(request.body);
 
-    next();
+    return next();
   };
 }
